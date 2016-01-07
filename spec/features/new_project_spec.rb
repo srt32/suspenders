@@ -69,14 +69,6 @@ RSpec.describe "Suspend a new project with default configuration" do
     expect(hound_config_file).to include "enabled: true"
   end
 
-  it "ensures newrelic.yml reads NewRelic license from env" do
-    newrelic_file = IO.read("#{project_path}/config/newrelic.yml")
-
-    expect(newrelic_file).to match(
-      /license_key: "<%= ENV\["NEW_RELIC_LICENSE_KEY"\] %>"/
-    )
-  end
-
   it "records pageviews through Segment if ENV variable set" do
     expect(analytics_partial).
       to include(%{<% if ENV["SEGMENT_KEY"] %>})
