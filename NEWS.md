@@ -1,5 +1,6 @@
 master (unreleased)
 
+* Remove `RAILS_ENV` definitions
 * Switch from Airbrake to Honeybadger
 * Generate applications with `rack_mini_profiler` (disabled by default, enabled
   by setting `RACK_MINI_PROFILER=1`)
